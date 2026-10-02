@@ -7,4 +7,4 @@ endpoints:
     type: HTTP
     port: 3000
     visibility:
-      - externa
+      - external
