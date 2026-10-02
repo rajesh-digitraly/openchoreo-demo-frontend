@@ -1,0 +1,10 @@
+apiVersion: openchoreo.dev/v1alpha1
+metadata:
+  name: demo-frontend-workload
+
+endpoints:
+  - name: http
+    type: HTTP
+    port: 3000
+    visibility:
+      - externa
