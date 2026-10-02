@@ -1,0 +1,26 @@
+apiVersion: openchoreo.dev/v1alpha1
+kind: Component
+metadata:
+  name: demo-frontend
+  namespace: default
+spec:
+  owner:
+    projectName: demo-app
+
+  componentType:
+    kind: ClusterComponentType
+    name: deployment/service
+
+  workflow:
+    kind: ClusterWorkflow
+    name: dockerfile-builder
+    parameters:
+      repository:
+        url: https://github.com/rajesh-digitraly/openchoreo-demo-frontend.git
+        appPath: ./openchoreo-demo-frontend
+        revision:
+          branch: main
+
+      docker:
+        context: ./openchoreo-demo-frontend
+        filePath: ./openchoreo-demo-frontend/Dockerfile
